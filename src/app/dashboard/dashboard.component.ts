@@ -99,65 +99,65 @@ export class DashboardComponent implements OnInit {
    * 
    * @return void
    */
-exibirBarChart(): void {
-  const el = document.getElementById('bar_chart');
-  const chart = new google.visualization.BarChart(el);
-  
-  chart.draw(this.obterDataTable(), this.obterOpcoes());
-}
+  exibirBarChart(): void {
+    const el = document.getElementById('bar_chart');
+    const chart = new google.visualization.BarChart(el);
+    
+    chart.draw(this.obterDataTable(), this.obterOpcoes());
+  }
 
-/**
- * Exibe o gráfico Line Chart.
- * 
- * @return void
- */
-exibirLineChart(): void {
-  const el = document.getElementById('line_chart');
-  const chart = new google.visualization.LineChart(el);
+  /**
+   * Exibe o gráfico Line Chart.
+   * 
+   * @return void
+   */
+  exibirLineChart(): void {
+    const el = document.getElementById('line_chart');
+    const chart = new google.visualization.LineChart(el);
 
-  chart.draw(this.obterDataTable(), this.obterOpcoes());
-}
+    chart.draw(this.obterDataTable(), this.obterOpcoes());
+  }
 
-/**
- * Exibe o gráfico Column Chart.
- * 
- * @return void
- */
-exibirColumnChart(): void {
-  const el = document.getElementById('column_chart');
-  const chart = new google.visualization.LineChart(el);
+  /**
+   * Exibe o gráfico Column Chart.
+   * 
+   * @return void
+   */
+  exibirColumnChart(): void {
+    const el = document.getElementById('column_chart');
+    const chart = new google.visualization.LineChart(el);
 
-  chart.draw(this.obterDataTable(), this.obterOpcoes());
-}
+    chart.draw(this.obterDataTable(), this.obterOpcoes());
+  }
 
-/**
- * Cria e retorna o objeto DataTable da API de gráficos,
- * responsável por definir os dados do gráfico.
- * 
- * @return any
- */
-obterDataTable(): any {
-  const data = new google.visualization.DataTable();
+  /**
+   * Cria e retorna o objeto DataTable da API de gráficos,
+   * responsável por definir os dados do gráfico.
+   * 
+   * @return any
+   */
+  obterDataTable(): any {
+    const data = new google.visualization.DataTable();
 
-  data.addColumn('string', 'Mês');
-  data.addColumn('number', 'Quantidade');
-  data.addRows(this.dados);
+    data.addColumn('string', 'Mês');
+    data.addColumn('number', 'Quantidade');
+    data.addRows(this.dados);
 
-  return data;
-}
+    return data;
+  }
 
-/**
- * Retorna as opções do gráfico, que incluem o título
- * e tamanho do gráfico.
- * 
- * @return any
- */
-obterOpcoes(): any {
-  return {
-    'title': 'Quantidade de cadastros primeiro semestre',
-    'width': 400,
-    'heigth': 300
-  };
-}
+  /**
+   * Retorna as opções do gráfico, que incluem o título
+   * e tamanho do gráfico.
+   * 
+   * @return any
+   */
+  obterOpcoes(): any {
+    return {
+      'title': 'Quantidade de cadastros primeiro semestre',
+      'width': 400,
+      'heigth': 300
+    };
+  }
 
 }
